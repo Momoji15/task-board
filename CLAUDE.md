@@ -25,6 +25,32 @@ git push origin main
 - `.env` やシークレットを含むファイルは絶対にコミットしない。
 - プッシュ前に `git diff --staged` で差分を確認する習慣をつける。
 
+## デプロイ先
+
+- **GitHub Pages:** https://Momoji15.github.io/task-board/
+- `main` ブランチへのプッシュで GitHub Actions が自動デプロイする。
+- ワークフロー: `.github/workflows/deploy.yml`
+
+## 技術スタック
+
+| カテゴリ | 技術 |
+|---|---|
+| UI ライブラリ | React 18 |
+| ビルドツール | Vite 5 |
+| 言語 | JavaScript (JSX) |
+| スタイリング | Plain CSS (CSS Modules なし) |
+| 状態管理 | React `useState` / `useEffect` |
+| 永続化 | `localStorage` |
+| パッケージマネージャ | npm |
+
+## コンポーネント命名規約
+
+- コンポーネントファイルは **PascalCase** で命名する（例: `TaskItem.jsx`）。
+- コンポーネント関数名もファイル名と一致させる。
+- 1ファイル1コンポーネントを基本とする。
+- CSS ファイルはコンポーネントと同名にする（例: `TaskItem.css`）。
+- フック（カスタム Hook）は `use` プレフィックスを付け `camelCase` で命名する（例: `useLocalStorage.js`）。
+
 ## 開発環境
 
 - OS: Windows 11
